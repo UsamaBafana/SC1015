@@ -16,6 +16,8 @@ For detailed
 ## Problem Definition
 > [!NOTE]
 >  What **socioeconomic factors** might be behind the suicide rates in the world?
+
+
 > [!NOTE]
 > Which model is best used to predict death rate?
 ----
