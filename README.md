@@ -14,9 +14,9 @@ For detailed
 
 -----
 ## Problem Definition
-- > [!NOTE]
-> What **socioeconomic factors** might be behind the suicide rates in the world?
-> Which model is best used to predict death rate?
+> [!NOTE]
+  > What **socioeconomic factors** might be behind the suicide rates in the world?
+  > Which model is best used to predict death rate?
 ----
 ## Models Used
 1. Linear Regression
