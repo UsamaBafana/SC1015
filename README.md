@@ -8,14 +8,15 @@ For detailed
 
 -----
 ## Contributors 
-1. Jun Hao 
-2. Karthik
-3. Usama
+1. Jun Hao -
+2. Karthik -
+3. Usama -
 
 -----
 ## Problem Definition
-- What **socioeconomic factors** might be behind the suicide rates in the world?
-- Which model is best used to predict death rate?
+- > [!NOTE]
+> What **socioeconomic factors** might be behind the suicide rates in the world?
+> Which model is best used to predict death rate?
 ----
 ## Models Used
 1. Linear Regression
