@@ -45,8 +45,7 @@ data <- data %>%
          country = fct_recode(country, "Republic of Serbia" = "Serbia"),
          country = fct_recode(country, "United States of America" = "United States"))
 
-# Reorder levels of age to be in chronological order. 
-data$age <- factor(data$age, levels = c("5-14 years", "15-24 years", "25-34 years", "35-54 years", "55-74 years", "75+ years"))
+
 ```
 
 ```{r include=FALSE}
@@ -150,35 +149,6 @@ highchart() %>%
     hc_add_theme(custom_theme)
 ```
 
-### Worldwide suicides by Age {.no-padding}
-```{r}
-# Create tibble for age so we can use it when creating our line plot.  
-age_tibble <- data %>%
-  select(year, age, suicides_no, population) %>%
-  group_by(year, age) %>%
-  summarise(suicide_capita = round((sum(suicides_no)/sum(population))*100000, 2))
-
-# Pick color for graph. 
-age_color <- rev(plasma(6))
-
-# Create line plot.
-highchart() %>% 
-    hc_add_series(age_tibble, hcaes(x = year, y = suicide_capita, group = age), type = "line", color = age_color) %>%
-    hc_tooltip(crosshairs = TRUE, borderWidth = 1.5, headerFormat = "", pointFormat = paste("Year: <b>{point.x}</b> <br>","Age: <b>{point.age}</b><br>", "Suicides: <b>{point.y}</b>")) %>%
-    hc_title(text = "Worldwide suicides by age") %>% 
-    hc_subtitle(text = "1985-2015") %>%
-    hc_xAxis(title = list(text = "Year")) %>%
-    hc_yAxis(title = list(text = "Suicides per 100K people"),
-             allowDecimals = FALSE,
-             plotLines = list(list(
-                    color = "black", width = 1, dashStyle = "Dash",
-                    value = mean(overall_tibble$suicide_capita),
-                    label = list(text = "Mean = 13.12", 
-                                 style = list(color = 'black'))))) %>% 
-    hc_add_theme(custom_theme)
-```
-
-
 Column {data-width=300}
 -----------------------------------------------------------------------
 
@@ -211,32 +181,6 @@ highchart() %>%
                             size = 130)) %>% 
   hc_add_theme(custom_theme)
 ```
-
-### Worldwide suicides by Age {.no-title .no-padding .colored }
-```{r}
-# First, create a tibble of suicide by Age. We will use this for our pie chart.
-pie_age <- data %>%
-  select(age, suicides_no, population) %>%
-  group_by(age) %>%
-  summarise(suicide_capita = round((sum(suicides_no)/sum(population))*100000, 2)) %>%
-  arrange(suicide_capita)
-
-# Make a vector of colors for the pie chart. 
-age_color <- rev(plasma(6))
-
-# Create pie chart for Age. 
-highchart() %>% 
-  hc_add_series(pie_age, hcaes(x = age, y = suicide_capita, 
-                               color = age_color), type = "pie") %>%
-  hc_tooltip(borderWidth = 1.5, headerFormat = "", pointFormat = paste("Age: <b>{point.age} ({point.percentage:.1f}%)</b> <br> Suicides per 100K: <b>{point.y}</b>")) %>% 
-  hc_title(text = "Worldwide suicides by <b>Age<b>") %>% 
-  hc_subtitle(text = "1985-2015") %>%
-  hc_plotOptions(pie = list(dataLabels = list(distance = 15, 
-                            style = list(fontSize = 10)), 
-                            size = 130)) %>% 
-  hc_add_theme(custom_theme)
-```
-
 
 
 Continents
@@ -282,34 +226,6 @@ hc_add_series(continent_sex_tibble, hcaes(x = continent, y = suicide_capita, gro
                value = mean(overall_tibble$suicide_capita),
                label = list(text = "Mean = 13.12", style = list(color = "black", fontSize = 10))))) %>%       
     hc_legend(verticalAlign = 'bottom', enabled = TRUE) %>% 
-    hc_add_theme(custom_theme)
-```
-
-### Suicides by continent and Age {.no-title .no-padding}
-```{r}
-# Create a tibble for continent and sex.
-continent_age_tibble <- data %>%
-  select(continent, age, suicides_no, population) %>%
-  group_by(continent, age) %>%
-  summarize(suicide_capita = round((sum(suicides_no)/sum(population))*100000, 2)) 
-
-# Create histogram of suicides by continent.
-highchart() %>%
-hc_add_series(continent_age_tibble, hcaes(x = continent, y = suicide_capita, group = age), type = "column")  %>% 
-    hc_colors(colors = age_color) %>%
-    hc_tooltip(borderWidth = 1.5, pointFormat = paste("Age: <b> {point.age} </b> <br> Suicides: <b>{point.y}</b>")) %>%
-    hc_title(text = "Suicides by continent and <b>Age<b>") %>%
-    hc_subtitle(text = "1985-2015") %>%
-    hc_xAxis(categories = c("Africa", "Asia", "Europe", "North <br> America", "Oceania", "South <br> America"), labels = list(style = list(fontSize = 10))) %>%
-    hc_yAxis(labels = list(style = list(fontSize = 11)),
-             title = list(text = "Suicides per 100K people", 
-                          style = (list(fontSize = 12))),
-        plotLines = list(
-          list(color = "black", width = 1, dashStyle = "Dash", 
-               value = mean(overall_tibble$suicide_capita),
-               label = list(text = "Mean = 13.12", style = list(color = "black", fontSize = 10))))) %>%
-    hc_legend(verticalAlign = 'bottom', enabled = TRUE, 
-              itemStyle = list(fontSize = 10)) %>% 
     hc_add_theme(custom_theme)
 ```
 
@@ -407,29 +323,6 @@ highchart() %>%
     hc_add_theme(custom_theme)
 ```
 
-### By age {.no-padding}
-```{r}
-# Create tibble for suicide by countries and age 
-country_bar_age <- data %>%
-  select(country, age, suicides_no, population) %>%
-  group_by(country, age) %>%
-  summarise(suicide_capita = round((sum(suicides_no)/sum(population))*100000, 2))
-
-# Create interactive bar plot.
-highchart() %>%
-    hc_add_series(country_bar_age, hcaes(x = country, y = suicide_capita, group = age), type = "bar", color = age_color)  %>% 
-    hc_tooltip(borderWidth = 1.5, pointFormat = paste("Age: <b>{point.age} ({point.percentage:.1f}%)</b> <br> Suicides per 100K: <b>{point.y}</b>")) %>%
-    hc_title(text = "Suicides by country and age") %>% 
-    hc_subtitle(text = "1985-2015") %>%
-    hc_xAxis(categories = country_tibble$country,
-             labels = list(step = 1),
-             min = 0, max = 30,
-             scrollbar = list(enabled = TRUE)) %>%
-    hc_yAxis(title = list(text = "Percent of total suicides")) %>%
-    hc_plotOptions(bar = list(stacking = "percent", 
-                              pointPadding = 0, groupPadding = 0, borderWidth = 0.5)) %>% 
-    hc_add_theme(custom_theme)
-```
 
 
 Column {data-width=600}
