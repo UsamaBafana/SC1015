@@ -14,11 +14,11 @@ For detailed
 
 -----
 ## Problem Definition
-> [!NOTE]
+> [!IMPORTANT]
 >  What **socioeconomic factors** might be behind the suicide rates in the world?
 
 
-> [!NOTE]
+> [!IMPORTANT]
 > Which model is best used to predict death rate?
 ----
 ## Models Used
