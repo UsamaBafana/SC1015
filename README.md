@@ -29,9 +29,22 @@ For detailed
 5. Gradient Boosting Regression
 -----
 ## Conclusion
-Male suicide rates are higher than females.
-Concluded to disregard female data for and used male’s STDDeathRate in Europe for our machine learning.
-Best models to use for predicting StdDeathRate using GNIPerCapita is:
-Linear Regression (Best)
-Polynomial Regression (Best)
-Followed by Decision Tree > Gradient Boosting > Random Forest
+By the results of the 5 models that were used, we decided that 3 models could be used;
+>Polynomial Regression (best)
+>
+>Decision Tree (2nd best)
+>
+>Linear Regression (3rd best)
+
+The other 2 models that we attempted to use performed much worse compared to Linear Regression and Polynomial Regression
+- Random Forest Regression by far produced the worst R^2 and MSE output
+- Gradient Boosting was bad but not as bad as random forest
+
+Polynomial Regression > Decision Tree > Linear Regression  >Gradient Boosting > Random Forest
+
+### Final Insights
+1. Male suicide rates are *higher* than females.
+2. Selected `GNIPerCapita` as our predictor variable 
+3. Some region have not enough data points to do machine learning, therefore we have chosen data from `Europe` and `Asia`
+4. Concluded to disregard female data as there is *no correlation* of StdDeathRate with GNIPerCapita.
+
