@@ -47,4 +47,5 @@ Polynomial Regression > Decision Tree > Linear Regression  >Gradient Boosting > 
 1. Male suicide rates are *higher* than females.
 2. Selected `GNIPerCapita` as our predictor variable 
 3. Some region have not enough data points to do machine learning, therefore we have chosen data from `Europe` and `Asia`
-4. Concluded to disregard female data as there is *no correlation* of StdDeathRate with GNIPerCapita.
+4. Disregard female data as there is *no correlation* of StdDeathRate with GNIPerCapita.
+5. Concluded to chose Male data in Europe and Asia to do our machine learning as there is a *strong negative correlation of StdDeathRate with GNIPerCapita.*
