@@ -21,13 +21,12 @@ For detailed
 > [!IMPORTANT]
 > Which model is best used to predict death rate?
 ----
-## Models Used
+## 5 Models were used:
 1. Linear Regression
 2. Decision tree Regression
-3. Ridge Regression
-4. Polynomial Regression
-5. Random Forest Regression
-6. Gradient Boosting Regression
+3. Polynomial Regression
+4. Random Forest Regression
+5. Gradient Boosting Regression
 -----
 ## Conclusion
 Male suicide rates are higher than females.
@@ -36,4 +35,3 @@ Best models to use for predicting StdDeathRate using GNIPerCapita is:
 Linear Regression (Best)
 Polynomial Regression (Best)
 Followed by Decision Tree > Gradient Boosting > Random Forest
-
