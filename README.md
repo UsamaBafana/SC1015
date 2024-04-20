@@ -4,14 +4,9 @@
 Our team's objective is to reduce the number of suicide rates by understanding what factor(s) contribute to the large number of suicide rate from [Dataset]( https://www.kaggle.com/datasets/ronaldonyango/global-suicide-rates-1990-to-2022).
 ![FCE 3, Team 2 (1)](https://github.com/UsamaBafana/SC1015/assets/63994902/8ca7f055-36c0-4021-9da0-91032c290ed6)
 
-## For Detailed Walkthrough:
-1. Data Cleaning
-2. Data Visualisation (EDA)
-3. Machine Learning
-4. Whole Project
 -----
 ## Contributors 
-1. Jun Hao @jun
+1. Jun Hao
 2. Karthik
 3. Usama
 
@@ -22,7 +17,7 @@ Our team's objective is to reduce the number of suicide rates by understanding w
 
 
 > [!IMPORTANT]
-> Which model is best used to predict death rate?
+> Which model is best used to predict the death rate?
 ----
 
 ## 5 Models were used:
@@ -54,7 +49,7 @@ Polynomial Regression > Decision Tree > Linear Regression  >Gradient Boosting > 
 
 #### Consistent Gender-Specific Trends:
 1. Despite the stability in global suicide rates, the trend in suicide rates between genders has remained consistent over the years.
-2. Recognizing the distinct factors including male and female suicide rate is essential.
+2. Recognizing the distinct factors including male and female suicide rates is essential.
    
 #### Socioeconomic Factors:
 ##### Regional Variations in Suicide Trends:
@@ -62,9 +57,9 @@ Polynomial Regression > Decision Tree > Linear Regression  >Gradient Boosting > 
 2. By incorporating regional data into predictive models, we can develop more accurate and robust algorithms for forecasting suicide rates. These models can help identify high-risk areas and target intervention more effectively, leading to more targeted and efficient allocation of resources for suicide prevention efforts.
 
 ##### Economic Prosperity and Suicide Rates:
-1. Our analysis revealed strong correlation between economic prosperity, Gross National Income (GNI), and suicide rates.
+1. Our analysis revealed a strong correlation between economic prosperity, Gross National Income (GNI), and suicide rates.
 2. We found that as GNIPerCapita increases, the variance of suicide rates decreases, indicating a more predictive model.
-3. Moreover, our analysis showed that suicide rates tends to decrease as GNIPerCapita increases.
+3. Moreover, our analysis showed that suicide rates tend to decrease as GNIPerCapita increases.
 
 
 ## Conclusion
