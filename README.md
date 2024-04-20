@@ -6,9 +6,9 @@ Our team's objective is to reduce the number of suicide rates by understanding w
 
 -----
 ## Contributors 
-1. Jun Hao
-2. Karthik
-3. Usama
+1. @Jyhrie - Jun Hao
+2. @KarthikRaj2715 - Karthik
+3. @UsamaBafana - Usama
 
 -----
 ## Problem Definition
